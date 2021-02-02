@@ -1,4 +1,6 @@
 # Nova Stella
+**This readme represents the goal not the current state of the project.**
+
 * Genre: 4X Strategy Sandbox
 * Inspiration: Roguelikes, vastness of space, project RHO, Aroura 4X
 * Mod-able.
