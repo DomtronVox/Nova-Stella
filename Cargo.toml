@@ -1,11 +1,20 @@
 [package]
 name = "nova_stella"
 version = "0.0.1"
+description = "A 4X strategy game focused on exploring and developing a single, procedurally generated star system."
+keywords = ["game", "strategy", "space", "simulation"]
+
 authors = ["DomtronVox <Domtron.Vox@Gmail.com>"]
 edition = "2018"
+
+readme = "README.md"
+repository = "https://github.com/DomtronVox/Nova-Stella"
+license = "MIT"
+license-file = "LICENSE"
+
 default-run = "macroquad_client"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
 
 [dependencies]
 rand = "0.3"
@@ -14,20 +23,23 @@ specs = { version = "0.16.1", features = ["specs-derive"] }
 rayon = "1.5.0"
 
 
-#These are text UI deps
+#These are macroquad_client deps
 macroquad = { version = "0.3.0-alpha.14", optional = true }
 megaui-macroquad = { version = "0.1.2", optional = true}
 
+
 [features]
-microquad-gfx = ["macroquad", "megaui-macroquad"] 
+default = ["macroquad", "megaui-macroquad"] 
+
 
 
 [lib]
 name = "nova_stella_sim"
 path = "src/simulation/lib.rs"
 
+
 [[bin]]
 name = "macroquad_client"
 path = "src/macroquad_client/main.rs"
-required-features = ["microquad-gfx"]
+required-features = ["default"]
 

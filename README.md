@@ -56,7 +56,7 @@ The game can be extended by adding more data for generation to pull from or thro
 
 Run the following command to build the GUI client:
 
-`cargo run --features="microquad-gfx"`
+`cargo run`
 
 Note if your connection is slow it helps to run `cargo fetch` before cargo run for some odd reason.
 

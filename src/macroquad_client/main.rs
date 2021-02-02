@@ -21,7 +21,7 @@ async fn main() {
     simulation.ecs
         .create_entity()
         .with(Satellite::new(2.0e30, glm::vec3(0.,0.,0.), glm::vec3(0.,0.,0.)))
-        .with(SatelliteGFX { color: RED })
+        .with(SatelliteGFX { color: ORANGE })
         .build();
 
     simulation.ecs
@@ -32,6 +32,16 @@ async fn main() {
             glm::vec3(3.364232464219209E-02, 2.943676972041208E-03, -1.742147408904596E-03)
         ))
         .with(SatelliteGFX { color: BLUE })
+        .build();
+
+    simulation.ecs
+        .create_entity()
+        .with(Satellite::new(
+            3.302e23, 
+            glm::vec3(1.406392155647568E-01, -1.790857591635183E-02, -7.136007406362744E-01), 
+            glm::vec3(-1.970865346910845E-02, -1.084601457064069E-03, 3.840307496361571E-03)
+        ))
+        .with(SatelliteGFX { color: RED })
         .build();
 
     let mut orbit_display_system = OrbitDisplaySystem {};
