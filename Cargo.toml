@@ -9,7 +9,6 @@ edition = "2018"
 
 readme = "README.md"
 repository = "https://github.com/DomtronVox/Nova-Stella"
-license = "MIT"
 license-file = "LICENSE"
 
 default-run = "macroquad_client"

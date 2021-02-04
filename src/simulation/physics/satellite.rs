@@ -104,14 +104,14 @@ impl<'a> System<'a> for OrbitMotionSystem {
                 //adds to all the other changes this cycle and the original velocity
                 velocity_changes += grav_accel * dt; //* dt to turn accel to velocity
 
-                println!("mass: {}; dist: {}; acceleration: {}; \n delta v: {}",
-                         satellites[target].mass, distance, grav_accel, velocity_changes);
+                //println!("mass: {}; dist: {}; acceleration: {}; \n delta v: {}",
+                //         satellites[target].mass, distance, grav_accel, velocity_changes);
             }
 
             //update our satellite with the velocity change. 
             satellites[target].velocity += velocity_changes;
 
-            println!("velocity: {}", satellites[target].velocity);
+            //println!("velocity: {}", satellites[target].velocity);
         }
     }
 }

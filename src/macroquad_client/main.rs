@@ -1,10 +1,14 @@
 extern crate nalgebra_glm as glm; 
 
 use macroquad::prelude::*;
+use megaui_macroquad::draw_megaui;
 
 use nova_stella_sim::StarSystemSimulation;
 
 use specs::{WorldExt, Builder, RunNow};
+
+mod ui_state;
+use ui_state::UIStateMachine;
 
 mod orbit_gfx_system;
 use orbit_gfx_system::{Satellite, SatelliteGFX, OrbitDisplaySystem};
@@ -15,6 +19,7 @@ use orbit_gfx_system::{Satellite, SatelliteGFX, OrbitDisplaySystem};
 async fn main() {    
     
     let mut simulation = StarSystemSimulation::new();
+    let mut ui_statemachine = UIStateMachine::new();
 
     simulation.ecs.register::<SatelliteGFX>();
 
@@ -47,14 +52,14 @@ async fn main() {
     let mut orbit_display_system = OrbitDisplaySystem {};
 
 
-    set_camera(Camera3D {
+    let camera = Camera3D {
         position: vec3(-20., 15., 0.),
         up: vec3(0., 1., 0.),
         target: vec3(0., 0., 0.),
         ..Default::default()
-    });
+    };
 
-    loop {
+    while ui_statemachine.running {
 
         //update model
         simulation.update(0.1);
@@ -62,24 +67,22 @@ async fn main() {
         //setup what's needed for drawing
         clear_background(BLACK);
 
+        set_camera(camera);
 
         draw_grid(20, 1.);
 
-        //draw_sphere(vec3(0., 0., 0.), 1., None, RED);
-
         //dispatch relevant gfx systems for the current context to update
         orbit_display_system.run_now(&simulation.ecs);
+
+        //to draw the ui we need to reset the camera
+        set_default_camera();
+        ui_statemachine.update(&mut simulation); 
         
         //draw everything
+        draw_megaui();
         next_frame().await   
     }
 
-    loop {
-        //dispatch relevant gfx systems for the current context to update
-        orbit_display_system.run_now(&simulation.ecs);
+    //TODO run simulation shutdown here.
 
-        draw_grid(20, 1.);
-
-        next_frame().await
-    }
 }
