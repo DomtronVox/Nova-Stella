@@ -55,7 +55,10 @@ impl UIStateMachine {
 
         current_state.update(self, sim);
 
-        self.current_state = Some(current_state);
+        //only assign back to current_state if the state wasn't changed during the update.
+        if self.current_state.is_none() {
+            self.current_state = Some(current_state);
+        }
     }
 
     ///Handles a StateEvent event.

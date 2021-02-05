@@ -1,5 +1,7 @@
-use crate::ui_state::{UIState, StateEvent, UIStateMachine};
+use super::{UIState, StateEvent, UIStateMachine, ConfigureGameState};
 use nova_stella_sim::StarSystemSimulation;
+
+
 
 use macroquad::{
     math::vec2,
@@ -67,9 +69,10 @@ impl UIState for MainMenuState {
                 ui.move_window(main_menu_id, Vector2::new(menu_pos.x, menu_pos.y));
                 
                 if ui.button(None, "Start New Game") {  
-                    //let data_path = Path::new("campaigns").join("TestGame");
-                    //let new_state = PlayingState::new(data_path.to_str().unwrap());
-                    //self.event = StateEvent::ChangeState(Box::new(new_state));*/
+                    let new_state = ConfigureGameState{};
+                    state_machine.handle_event(
+                        StateEvent::ChangeState( Box::new(new_state) )
+                    );
                 }
                 ui.button(None, "Load");
                 if ui.button(None, "Quit") { 
