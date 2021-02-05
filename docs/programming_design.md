@@ -62,8 +62,8 @@ This sub-system would be responsible for simulating atmospheres. Likely both pla
 ## Geological
 This sub-system would be responsible for simulating ground and underground parts of natural bodies and their exploitation.
 
-#Module Brainstorming
-##CES
+# Module Brainstorming
+## CES
 planet/moon/asteroid
    is satellite
    has atmosphere (maybe zero)

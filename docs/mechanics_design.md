@@ -1,4 +1,4 @@
-#General Idea
+# General Idea
 The player enters a solar system with some sort of starting ship or fleet and has free reign to develop the solar system, trade, or become a pirate. Build habitats, mine asteroids, skim gas giants, start planetary or orbital settlements, and more. The player has some long term soft goals like re-establishing contact with the home world and send out colony ships to new systems but these can be ignored. Conflicts are mostly environmental but other factions can also be an issue.
 
 # Design Goals
@@ -56,7 +56,7 @@ Solar System Configuration
 
 Use some well known systems like Sol and Alpha Centauri, some challenging systems, and some exotic ones.
 
-##Starting Mission
+## Starting Mission
 The starting mission determines what equipment, personnel, and soft goals the player starts with. Below are the different values a scenario can have.
 
 ### Goal 
@@ -153,7 +153,7 @@ Leader info as follows.
     * Driving goals
 
 
-###Individuals
+### Individuals
 If you want a higher LOD for personnel then a simplified version of the leader info is available. 
 
 * Fluff
