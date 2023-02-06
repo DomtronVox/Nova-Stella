@@ -8,9 +8,9 @@
 * Focus on the idea of Level of Detail simulations.
 
 ## Summary
-Nova Stella, Latin for New Star, is a 4X sci-fi strategy game built onto a collection of simulations that attempt to be as accurate as is feasible for their domain. Each simulation is built with __Level of Detail__ kept in mind, allowing the player to choose how detailed they want different parts of the game's simulation. 
+Nova Stella, Latin for New Star, is a 4X sci-fi strategy game built onto a collection of simulations that attempt to be as accurate as is feasible for their individual domains. Each simulation is built with the concept of __Level of Detail__ kept in mind, allowing the player to choose how detailed they want different parts of the game's simulation. 
 
-The gameplay is focused on exploring and developing a single, procedurally generated star system and follows the traditional 4X game pattern:
+The gameplay is focused on exploring and developing a single, procedural generated star system and follows the traditional 4X game pattern:
 
 * Exploration: Survey the orbital bodies to discover their uses and dangers, then research the biological and mineral materials found therein.
 * Expand: Build stations, planet side colonies, and ships. Design new ships and plan out logistics for all your stations.
